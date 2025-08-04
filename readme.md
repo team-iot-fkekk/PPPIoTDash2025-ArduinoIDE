@@ -169,9 +169,9 @@ The ESP-01 is functions to enable wifi connection to the Nucleo-G031K8. The adap
     ![](./images/lib-lcd.png)
 
 ###  4.1.4. Load the stiot2022 sketch
-Download and open the [stiot2022 sketch](./stiot2022-v2/stiot2022-v2.ino) in your PC.
+Download and open the [sensor sketch](./stiot2022-v2/LCD_all.ino) in your PC.
 
-![](./images/ardu2-load.png)
+![](./images/sensor-all.png)
 
 # 5. Blynk IoT Platform Setup
 
