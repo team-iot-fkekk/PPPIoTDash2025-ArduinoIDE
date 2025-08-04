@@ -46,7 +46,7 @@ This is a github page for Program Pentauliahan Profesional dalam IoT dan Peranti
 2. Blynk IoT Apps (access from web browser)
 
 # 3. Overall Circuit Assembly
-![Schematic](./images/06utemstm32-poli_all.jpg)
+![Schematic](./images/06utemstm32-poli_bb-new.jpg)
 
 ## 3.1. Basic power line wiring
 The schematic desribe the connection for power line references regarding Vcc and GND.
@@ -98,7 +98,7 @@ A 16x2 LCD is a character display module that shows 2 lines of 16 characters eac
 ||SDA|D0|
 ||SCL|D1|
 
-![Schematic](./images/05utemstm32-poli_lcd.jpg)
+![Schematic](./images/05utemstm32-poli-lcd_bb.jpg)
 
 ## 3.6. ESP-01 with adapter
 The ESP-01 is functions to enable wifi connection to the Nucleo-G031K8. The adapter simplified the connection from 8-pin to 4-pin wiring. 
@@ -109,7 +109,7 @@ The ESP-01 is functions to enable wifi connection to the Nucleo-G031K8. The adap
 ||Tx|D4|
 ||Rx|D5|
 
-![Schematic](./images/06utemstm32-poli_all.jpg)
+![Schematic](./images/06utemstm32-poli_bb-new.jpg)
 
 # 4. Arduino IDE Setup
 ## 4.1. Arduino Version 2.0
