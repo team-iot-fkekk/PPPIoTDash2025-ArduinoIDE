@@ -95,8 +95,8 @@ A 16x2 LCD is a character display module that shows 2 lines of 16 characters eac
 |:-----|:----:|----:|
 |LCD|Vcc|5V|
 ||Gnd|Gnd|
-||SDA|D0|
-||SCL|D1|
+||SDA|D4|
+||SCL|D5|
 
 ![Schematic](./images/05utemstm32-poli-lcd_bb.jpg)
 
@@ -106,8 +106,8 @@ The ESP-01 is functions to enable wifi connection to the Nucleo-G031K8. The adap
 |:-----|:----:|----:|
 |ESP-01|Vcc|5V|
 ||Gnd|Gnd|
-||Tx|D4|
-||Rx|D5|
+||Tx|D1|
+||Rx|D0|
 
 ![Schematic](./images/06utemstm32-poli_bb-new.jpg)
 
