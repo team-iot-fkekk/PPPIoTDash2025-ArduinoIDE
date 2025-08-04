@@ -164,16 +164,9 @@ The ESP-01 is functions to enable wifi connection to the Nucleo-G031K8. The adap
 
 4. Navigate to **Sketch > Include library > Manage Libraries**
 
-5. In the search box, type ```dht sensor library```. Click **Install**
+5. In the search box, type ```liquidcrystal_i2c```. Click **Install**
 
-    ![](./images/ardu2-dht-install.png)
-
-    > If there is prompt to install "Adafruit Unified Sensor", click **YES**
-
-6. In the search box, type ```Adafruit Unified Sensor```. Click **Install**
-   Skip this instruction if you already install the library in (2).
-
-   ![](./images/ardu2-adafruit-install.png)
+    ![](./images/lib-lcd.png)
 
 ###  4.1.4. Load the stiot2022 sketch
 Download and open the [stiot2022 sketch](./stiot2022-v2/stiot2022-v2.ino) in your PC.
