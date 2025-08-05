@@ -15,7 +15,8 @@
     - [4.1.1. Preference Configurations](#411-preference-configurations)
     - [4.1.2. Board Manager Setup](#412-board-manager-setup)
     - [4.1.3. Library Setup](#413-library-setup)
-    - [4.1.4. Load the stiot2022 sketch](#414-load-the-stiot2022-sketch)
+    - [4.1.4. Load the Arduino sketch for WiFi and Blynk Test](#414-load-the-arduino-sketch-for-wifi-and-blynk-test)
+    - [4.1.5. Integrate the sensor codes to Load the Arduino sketch](#415-integrate-the-sensor-codes-to-load-the-arduino-sketch)
 - [5. Blynk IoT Platform Setup](#5-blynk-iot-platform-setup)
   - [5.1. Log in/Register Account](#51-log-inregister-account)
   - [5.2. Create New Template](#52-create-new-template)
@@ -148,30 +149,25 @@ The ESP-01 is functions to enable wifi connection to the Nucleo-G031K8. The adap
 
 ###  4.1.3. Library Setup
 
-1. Download the Blynk_Release_v1.1.0.zip file from [Blynk Github](https://github.com/blynkkk/blynk-library/releases/tag/v1.1.0). 
-   
-    ![](./images/blynk-lib-dload.png)
+1. Navigate to **Sketch > Include library > Manage Libraries**
 
-2. Extract and copy both **Libraries** and **Tools** folders.
-   
-3. Paste all of the folders to your _sketchbook folder_ of Arduino IDE. Navigate to **File > Preference** in Arduino IDE to find your _sketchbook folder_.
-   
-    ![](./images/ardu2-librarypath.png)
-
-    >- **libraries** should go to **libraries** 
-    >- **tools** should go to **tools** 
-    >- If you don't have **libraries** or **tools** folders, you can create them manually.
-
-4. Navigate to **Sketch > Include library > Manage Libraries**
-
-5. In the search box, type ```liquidcrystal_i2c```. Click **Install**
+2. In the search box, type ```liquidcrystal_i2c```. Click **Install**
 
     ![](./images/lib-lcd.png)
 
-###  4.1.4. Load the stiot2022 sketch
+3. In the search box, type ```blynk```. Click **Install**
+
+    ![](./images/ardu-installblynklib.png)
+
+###  4.1.4. Load the Arduino sketch for WiFi and Blynk Test
+
+> Test your ESP8266 Wifi connection and Blynk app first by running this sketch. [Blynk-ESP sketch](./stiot2022-v2/blynkesp.ino)
+
+###  4.1.5. Integrate the sensor codes to Load the Arduino sketch
 Download and open the [sensor sketch](./stiot2022-v2/LCD_all.ino) in your PC.
 
 ![](./images/sensor-all.png)
+
 
 # 5. Blynk IoT Platform Setup
 
@@ -185,9 +181,9 @@ Do log in to your account or register a new account if you don't have any.
 The main interface of blynk.cloud
 
 ## 5.2. Create New Template
-1. Click on the template icon (9-dots) on the right panel.
+1. Click on the **Developer Zones > My Templates**.
    
-    ![](./images/blynk-main.png)
+    ![](./images/blynk-devzones.png)
 
 2. Click the "+ New Template" to create new template
 
@@ -199,14 +195,14 @@ The main interface of blynk.cloud
 
 4. The interface for your template as follows.
    
-    ![](./images/blynk-newtemplate-page.png)
+    ![](./images/blynk-template-home.png)
 
 ## 5.3. Add datastream
 Datastream indicated the type and value of data that will be received by Blynk Cloud from your STM32 board.
 
-1. From the template page, click on the **Datastream** tab.
+1. From the template page, click on the **Datastream** tab. Then click the **Edit** button on the right side.
    
-   ![](./images/blynk-datastream-page.png)
+   ![](./images/blynk-adddatastream.png)
 
 2. Click on the **+ New Datastream** and select **Virtual Pin**.  
    
@@ -220,17 +216,17 @@ Datastream indicated the type and value of data that will be received by Blynk C
    
     ![](./images/blynk-after-newdatastream.png)
 
-5. Continue to add new Datastream according to the following table.
+5. Continue to add new Datastream according to the following table. Once done, click **Save and Apply**
    
-    ![](./images/blynk-alldatastreams.png)
+    ![](./images/blynk-datastream-done.png)
     
 ## 5.4. Add Dashboard
 
 Dashboard is your main interface in monitoring all data received by Blynk Cloud.
 
-1. Click on the **Dashboard** tab to open the dashboard interface.
+1. Click on the **Dashboard** tab to open the dashboard interface. Then click the **Edit** button.
 
-    ![](./images/blynk-webdashboard-edit.png)
+    ![](./images/blynk-dashboard-1.png)
 
 2. Add new widget by selecting any widget in the widget box (left panel). 
 3. Click and drag a widget called  **Label** to the centre page. 
@@ -242,50 +238,45 @@ Dashboard is your main interface in monitoring all data received by Blynk Cloud.
    
     ![](./images/blynk-webdashboard-settings.png)
     
-6. Click and drag a widget called **Gauge** to the centre page.
+6. Click and drag a widget called **LED** to the centre page. Hover over the widget and click the cogwheel for LED settings.
    
-   ![](./images/blynk-webdashboard-gauge.png)
-
-7. Hover over the widget and click the cogwheel for Gauge settings.
-   
-   ![](images/blynk-webdashboard-gaugeedit.png)
+   ![](images/blynk-dashboard-led.png)
   
     > You can also change the color of the widget to your preference.
 
-8.  Continue adding new widgets until all of the datastreams are presented in the dashboard. An example of a complete dashboard as follows.
-   
-    ![](./images/blynk-dashboard-example.png)
+7.  Continue adding new widgets until all of the datastreams are presented in the dashboard. 
 
-9.  Click **Save and Apply** at the top-right of the page.
+8.  Click **Save and Apply** at the top-right of the page.
    
 ## 5.5. Add New Device
 Now, we need to create a new device for our template.
 
-1. Go back to the main page by clicking the magnifier icon on the left panel.
+1. Click on the **Devices** tab in the left panel.
     
-    ![](./images/blynk-main.png)
+    ![](./images/blynk-addnewdevice.png)
 
-2. Click on **+ New Device** on the top left of the page.
+2. Click on **+ New Device** on the top right of the page.
 3. Select **From template**.
    
-   ![](./images/blynk-newdevice.png)
+   ![](./images/blynk-adddevice-template.png)
 
 4. Fill in detail for the new device. Click **Create**.
    
-    ![](./images/blynk-newdevice-setting.png)
+    ![](./images/blynk-selecttemplate.png)
 
 5. Your device page will appear.
-   
-   ![](./images/blynk-after-newdevice2.png)
+
 
 ## 5.6. Copy credentials
 To link your Blynk Cloud device and your STM32 board, you need to copy the Device Info or credentials and paste the info to your Arduino sketch.
 
-1. Click on the **Device Info** tab.
+1. Click on your device, then click on the **Developers Tool** icon.
    
-    ![](./images/blynk-deviceinfo.png)
+    ![](./images/blynk-deviceparameters.png)
 
 2. Click on the **Firmware Configuration** to copy your code to the clipboard. Then directly switch to your Arudino IDE with the stiot2022 skecth is open.
+
+    ![](./images/blynk-firmwareconfig.png)
 
 # 6. Running the project
 1. Paste the credentials in Arduino IDE at the section.
@@ -299,21 +290,23 @@ To link your Blynk Cloud device and your STM32 board, you need to copy the Devic
 
     ![](./images/ardu-select-board.png)
 
-4. Select the STM32 board ``-G031K8```
+4. Select the STM32 board ``Nucleo-L432KC``
 
     ![](./images/ardu-select-l412.png)
+    >Picture shows a different model.
 
 
 5. Select the comm port
    
     ![](./images/ardu-select-comm.png)
+    >Picture shows a different model.
 
 6. Click on the **Upload** button to program the board.
 7. Once programmed, click the serial monitor (magnifier icon on the top-right) to view the serial comm.
 8. Make sure ```Both NL & CR``` and ```115200 Baud``` are selected.
 9. A Blynk image is appear indicating the program is running. Sample image:
     
-    ![Sample Image](images/Serial_Monitor_Blynk_Output.jpg)
+    ![Sample Image](images/blynk-connected.png)
 
 10. If program not responding, press the RST button at the bottom of the STM32 board or re-program the board from Arduino IDE.
 
