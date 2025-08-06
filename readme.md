@@ -103,7 +103,7 @@ A 16x2 LCD is a character display module that shows 2 lines of 16 characters eac
 >Download and open the [LCD sketch](./stiot2022-v2/LCD.ino) for testing.
 
 ## 3.6. ESP-01 with adapter
-The ESP-01 is functions to enable wifi connection to the Nucleo-G031K8. The adapter simplified the connection from 8-pin to 4-pin wiring. 
+The ESP-01 is functions to enable wifi connection to the Nucleo-L432KC. The adapter simplified the connection from 8-pin to 4-pin wiring. 
 |Sensor|Pin|Nucloe-L432KC|
 |:-----|:----:|----:|
 |ESP-01|Vcc|5V|
@@ -111,7 +111,7 @@ The ESP-01 is functions to enable wifi connection to the Nucleo-G031K8. The adap
 ||Tx|D0|
 ||Rx|D1|
 
-![Schematic](./images/06utemstm32-poli_bb-new.jpg)
+![Schematic](./images/utemstm32-poli_8266.jpg)
 
 # 4. Arduino IDE Setup
 ## 4.1. Arduino Version 2.0
